@@ -1,0 +1,11 @@
+This folder contains implemented methods for solving the rank-constrained NCM problems:
+
+SDP relaxation
+log-det heuristic
+modified log-det heuristic
+bi-criterion log-det heuristic
+convex iteration
+modified convex iteration
+bi-criterion convex iteration
+bisection algorithm (log-det version)
+bisection algorithm (convex iteration version)
