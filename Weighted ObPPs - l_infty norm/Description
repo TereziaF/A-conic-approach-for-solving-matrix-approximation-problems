@@ -1,0 +1,11 @@
+The folder contains the following methods for solving weighted OPPs with the l_infty norm in the objective:
+
+SDP relaxation
+log-det heuristic
+modified log-det heuristic
+bi-criterion log-det heuristic
+convex iteration
+modified convex iteration
+bi-criterion convex iteration
+bisection algorithm (log-det version)
+bisection algorithm (convex iteration version)
