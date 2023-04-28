@@ -1,5 +1,0 @@
-The folder contains the following methods for solving two-sided OPPs with additional linear constraints:
-
-SDP relaxation
-modified log-det heuristic
-modified convex iteration
