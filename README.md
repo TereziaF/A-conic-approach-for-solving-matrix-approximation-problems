@@ -1,6 +1,8 @@
 # A-conic-approach-for-solving-matrix-approximation-problems
 Implemented methods for solving the problem of finding the nearest low-rank correlation matrix and constrained Procrustes problems
 
+#methods are executed in scripts ending "_call"
+
 #Matlab codes involving implementation of methods for solving following problems:
 
 Finding the nearest low-rank correlation matrix with the desired rank
