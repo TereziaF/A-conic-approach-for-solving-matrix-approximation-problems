@@ -34,6 +34,8 @@ variable Y(p+q,p+q) symmetric
 variable V(m+n, m+n) symmetric
 variable s_var(1,1)
 minimize s_var + alpha*sum(diag(inverzna_matica*V))
+  
+%INSERT ADDITIONAL LINEAR OR SEMIDEFINITE CONSTRAINTS HERE
 
 Y == [s_var*eye(p), W.*(C - A*X*B); W'.*(C - A*X*B)', s_var*eye(q)];
 
