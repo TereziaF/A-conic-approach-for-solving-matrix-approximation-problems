@@ -8,6 +8,8 @@ variable Y(p+q,p+q)
 variable V(m+n, m+n) symmetric
 minimize s
 
+%INSERT ADDITIONAL LINEAR OR SEMIDEFINITE CONSTRAINTS HERE
+
 Y == [s*eye(p), W.*(C - A*X*B); W'.*(C - A*X*B)', s*eye(q)];
 
 Y == semidefinite(q+p);
