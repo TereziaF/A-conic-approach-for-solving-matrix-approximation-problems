@@ -1,5 +1,13 @@
 function[U] = OPP_CI2(V,m,n,k)
 
+%inputs:
+%V - output of OPP_CI1
+%m,n - dimensions of data
+%k - desired rank
+
+%outputs:
+%U - direction matrix for next iteration of the algorithm
+
 cvx_begin 
 variable U(n+m,n+m) symmetric
 minimize sum(diag(U*V))
