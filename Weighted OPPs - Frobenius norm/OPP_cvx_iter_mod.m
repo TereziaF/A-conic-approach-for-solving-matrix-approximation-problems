@@ -6,7 +6,7 @@ function[X,hodnost,hodnost_final,g,g_final,norma,norm_final,cas,t,s,empirical_ep
 % k - desired rank
 % epsilon - tolerance
 % M - maximum number of the same iterations
-% alpha - relative weight for bi-criterion problem
+% gamma - upper bound on the objective value
 
 %outputs:
 % X - orthogonal solution
@@ -56,6 +56,7 @@ t = t+1;
 [X,Y,Z,V] = OPP_CI1_mod(U,C,A,B,W,m,n,p,q,gamma);
 U = OPP_CI2(V,m,n,k);
 
+%saving values
 hodnost = [hodnost;sum(eig(V)>epsilon)];
 sum_eig = [sum_eig;sum(diag(V*U))];
 g = [g; sum(diag(Z))];
