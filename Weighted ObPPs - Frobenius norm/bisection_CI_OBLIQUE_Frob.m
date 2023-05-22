@@ -14,7 +14,7 @@ function[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas,hodnost_final_
 % M - maximum number of the same iterations
 
 %outputs:
-% X_hat - orthogonal solution X
+% X_hat - oblique solution X
 % hodnost_hat - rank of solution V
 % g_hat - optimal value of the reformulated problem
 % norm_hat - optimal value of the original problem
