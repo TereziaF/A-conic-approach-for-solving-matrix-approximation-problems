@@ -12,3 +12,5 @@ bisection algorithm (convex iteration version)
 
 All algorithms can be modified to solve weighted ObPPs with additional linear or semidefinite constraints
 - find comment %INSERT ADDITIONAL LINEAR OR SEMIDEFINITE CONSTRAINTS HERE in codes
+
+Methods are executed in script ending "_call".
