@@ -48,6 +48,7 @@ t=0;
 %set counter of the same iterations
 s=0;
 
+%algorithm
 while (hodnost(end) > k && s < M)
 
 t = t+1;
@@ -55,6 +56,7 @@ t = t+1;
 [X,t_var,S,V] = OPP_CI1_mod_L1(U,C,A,B,W,m,n,p,q,gamma);
 U = OPP_CI2(V,m,n,k);
 
+%saving values
 hodnost = [hodnost;sum(eig(V)>epsilon)];
 sum_eig = [sum_eig;sum(diag(V*U))];
 g = [g; t_var];
@@ -68,6 +70,7 @@ end
 
 end
 
+%specifying outputs
 vh = eig(V);
 empirical_epsilon = vh(n+m-k);
 g_final = t_var;
