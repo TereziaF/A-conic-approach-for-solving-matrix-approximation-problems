@@ -34,6 +34,8 @@ variable t_var(1,1)
 variable S(p,q)
 variable V(m+n, m+n) symmetric
 minimize sum(diag(inverzna_matica*V))
+  
+%INSERT ADDITIONAL LINEAR OR SEMIDEFINITE CONSTRAINTS HERE
 
 diag(G) == ones(n,1);
 
