@@ -9,3 +9,6 @@ modified convex iteration
 bi-criterion convex iteration
 bisection algorithm (log-det version)
 bisection algorithm (convex iteration version)
+
+All algorithms can be modified to solve weighted ObPPs with additional linear or semidefinite constraints
+- find comment %INSERT ADDITIONAL LINEAR OR SEMIDEFINITE CONSTRAINTS HERE in codes
