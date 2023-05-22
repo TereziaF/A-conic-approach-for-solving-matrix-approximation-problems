@@ -1,5 +1,28 @@
-function[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas,hodnost_final_CI_MOD,g_final_CI_MOD,norm_final_CI_MOD,cas_CI_MOD,t_CI_MOD,s_CI_MOD,empirical_epsilon_CI_MOD,sum_eig_final,sum_eig_real] = OPP_bisection_CI_Linfty(g0,g1,X0,X1,V0,V1,C,A,B,W, k,epsilon,M)
+function[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas] = OPP_bisection_CI_Linfty(g0,g1,X0,X1,V0,V1,C,A,B,W, k,epsilon,M)
 
+%inputs:
+% g0 - optimal value of SDP relaxation
+% g1 - optimal value of a heuristic
+% X0 - solution X of SDP relaxation
+% X1 - solution X of a heuristic
+% V0 - solution V of SDP relaxation
+% V1 - solution V of a heuristic
+% C, A, B - data of the problem
+% W - matrix specifying missing elements of C
+% k - desired rank
+% epsilon - tolerance
+% M - maximum number of the same iterations
+
+%outputs:
+% X_hat - orthogonal solution X
+% hodnost_hat - rank of solution V
+% g_hat - optimal value of the reformulated problem
+% norm_hat - optimal value of the original problem
+% gamma - values of gamma in all iterations
+% hodnost - rank of solutions in all iterations
+% iter - number of iterations
+% cas - computation time
+    
 %dimension
 p = size(C,1);
 q = size(C,2);
@@ -33,6 +56,7 @@ sum_eig_real(iter) = sum(vh(1:n+m-k));
 lb = g0;
 ub = g1;
 
+%algorithm
 while abs(ub-lb) > epsilon
     
     iter = iter + 1;
@@ -53,6 +77,7 @@ while abs(ub-lb) > epsilon
     end
 end
 
+%specifying outputs
 hodnost_hat = sum(eig(V_hat)>epsilon);
 norma_hat = norm(W.*(C-A*X_hat*B),Inf);
 a2 = toc;
