@@ -8,6 +8,8 @@ variable S(p,q)
 variable V(m+n, m+n) symmetric
 minimize t
 
+%INSERT ADDITIONAL LINEAR OR SEMIDEFINITE CONSTRAINTS HERE
+
 diag(G) == ones(n,1);
 
 V == [eye(m), X; X', G];
