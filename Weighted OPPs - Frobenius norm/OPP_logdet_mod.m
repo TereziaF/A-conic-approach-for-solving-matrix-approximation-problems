@@ -76,6 +76,7 @@ sum(diag(Z)) <= gamma;
 
 cvx_end
 
+%saving values
 hodnost = [hodnost;sum(eig(V)>epsilon)];
 g = [g; sum(diag(Z))];
 norma = [norma; norm(W.*(C-A*X*B),'fro')];
