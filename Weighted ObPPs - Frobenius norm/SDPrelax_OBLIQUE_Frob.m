@@ -6,7 +6,7 @@ function[X,V,G,Y,Z] = SDPrelax_OBLIQUE_Frob(A, B, C, W, m, n, p, q)
 
 %outputs:
 %X - oblique solution
-%Y,Z,V - solutions of the reformulated problem
+%Y,Z,V,G - solutions of the reformulated problem
 
 cvx_begin
 variable X(m,n) 
