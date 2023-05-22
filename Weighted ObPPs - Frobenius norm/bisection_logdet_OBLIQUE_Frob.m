@@ -1,5 +1,27 @@
 function[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas,hodnost_final_LOG_MOD,g_final_LOG_MOD,norm_final_LOG_MOD,cas_LOG_MOD,t_LOG_MOD,s_LOG_MOD,empirical_epsilon_LOG_MOD] = bisection_logdet_OBLIQUE_Frob(g0,g1,X0,X1,V0,V1,C,A,B,W,k,epsilon,M)
 
+%inputs:
+% g0 - optimal value of SDP relaxation
+% g1 - optimal value of a heuristic
+% X0 - solution X of SDP relaxation
+% X1 - solution X of a heuristic
+% V0 - solution V of SDP relaxation
+% V1 - solution V of a heuristic
+% C, A, B - data of the problem
+% W - matrix specifying missing elements of C
+% k - desired rank
+% epsilon - tolerance
+% M - maximum number of the same iterations
+
+%outputs:
+% X_hat - oblique solution X
+% hodnost_hat - rank of solution V
+% g_hat - optimal value of the reformulated problem
+% norm_hat - optimal value of the original problem
+% gamma - values of gamma in all iterations
+% hodnost - rank of solutions in all iterations
+% iter - number of iterations
+% cas - computation time
 
 %dimension
 p = size(C,1);
@@ -32,6 +54,7 @@ gamma(iter) = 0;
 lb = g0;
 ub = g1;
 
+%algorithm
 while abs(ub-lb) > epsilon
     
     iter = iter + 1;
@@ -52,6 +75,7 @@ while abs(ub-lb) > epsilon
     end
 end
 
+%specifying outputs
 hodnost_hat = sum(eig(V_hat)>epsilon);
 norma_hat = norm(W.*(C-A*X_hat*B),'fro');
 a2 = toc;
