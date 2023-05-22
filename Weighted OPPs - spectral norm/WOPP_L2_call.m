@@ -66,14 +66,14 @@ hodnost_final_CI_MOD                             %rank
 norm(X_CI_MOD'*X_CI_MOD-eye(n),'fro')            %orthogonality criterion
 
 %bisective algorithm with logdet for RCCP with alpha > 0
-[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas,hodnost_final_LOG_MOD,g_final_LOG_MOD,norm_final_LOG_MOD,cas_LOG_MOD,t_LOG_MOD,s_LOG_MOD,empirical_epsilon_LOG_MOD] = OPP_bisection_logdet_L2(s_rel,g_final_LOG_bicri,X_rel,X_LOG_bicri,V_rel,V_LOG_bicri,C,A,B,W,m,tol,maxiter);
+[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas] = OPP_bisection_logdet_L2(s_rel,g_final_LOG_bicri,X_rel,X_LOG_bicri,V_rel,V_LOG_bicri,C,A,B,W,m,tol,maxiter);
 
 norma_hat                                        %optimal value
 hodnost_hat                                      %rank
 norm(X_hat'*X_hat-eye(n),'fro')                  %orthogonality criterion
 
 %bisective algorithm with convex iteration for RCCP with alpha > 0
-[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas,hodnost_final_CI_MOD,g_final_CI_MOD,norm_final_CI_MOD,cas_CI_MOD,t_CI_MOD,s_CI_MOD,empirical_epsilon_CI_MOD] = OPP_bisection_CI_L2(s_rel,g_final_CI_bicri,X_rel,X_CI_bicri,V_rel,V_CI_bicri,C,A,B,W,m,tol,maxiter);
+[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas] = OPP_bisection_CI_L2(s_rel,g_final_CI_bicri,X_rel,X_CI_bicri,V_rel,V_CI_bicri,C,A,B,W,m,tol,maxiter);
 
 norma_hat                                        %optimal value
 hodnost_hat                                      %rank
