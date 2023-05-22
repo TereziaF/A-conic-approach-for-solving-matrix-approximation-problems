@@ -1,4 +1,4 @@
-function[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas,hodnost_final_LOG_MOD,g_final_LOG_MOD,norm_final_LOG_MOD,cas_LOG_MOD,t_LOG_MOD,s_LOG_MOD,empirical_epsilon_LOG_MOD] = OPP_bisection_logdet_Linfty(g0,g1,X0,X1,V0,V1,C,A,B,W,k,epsilon,M)
+function[X_hat,hodnost_hat,g_hat,norma_hat,gamma,hodnost,iter,cas] = OPP_bisection_logdet_Linfty(g0,g1,X0,X1,V0,V1,C,A,B,W,k,epsilon,M)
 
 %inputs:
 % g0 - optimal value of SDP relaxation
